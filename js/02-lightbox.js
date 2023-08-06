@@ -12,23 +12,11 @@ function createMarkup(arr) {
 
 }
 
-gallery.insertAdjacentHTML('beforeend', createMarkup(galleryItems))
-
-gallery.addEventListener('click', handlerGalleryItemClick)
-
-function handlerGalleryItemClick(evt){
-    evt.preventDefault();
-
-    if(evt.target === evt.currentTarget) {
-        return
-    }
-    
-    let gallery = new SimpleLightbox('.gallery a', {
+gallery.insertAdjacentHTML('beforeend', createMarkup(galleryItems));
+ 
+    const lightbox = new SimpleLightbox('.gallery a', {
         captionsData: 'alt',
         captionDelay: 250,
       });
-
-};
-
 
 console.log(galleryItems);
